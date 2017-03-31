@@ -1,0 +1,6 @@
+*.apk
+*.iml
+/build
+/libs
+manifest-merger-release-report.txt
+AndroidManifest.xml
