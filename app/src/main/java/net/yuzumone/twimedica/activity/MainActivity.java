@@ -1,7 +1,9 @@
-package net.yuzumone.twimedica;
+package net.yuzumone.twimedica.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import net.yuzumone.twimedica.R;
 
 public class MainActivity extends AppCompatActivity {
 
