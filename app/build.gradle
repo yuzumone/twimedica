@@ -8,7 +8,7 @@ def getSecretProperty(name) {
 }
 
 def FABRIC_API_KEY = getSecretProperty('FABRIC_API_KEY')
-def TWITTER_API_KEY = "\"${getSecretProperty('TWITTER_API_KET')}\""
+def TWITTER_API_KEY = "\"${getSecretProperty('TWITTER_API_KEY')}\""
 def TWITTER_API_SECRET = "\"${getSecretProperty('TWITTER_API_SECRET')}\""
 
 android {
