@@ -14,6 +14,9 @@ def TWITTER_API_SECRET = "\"${getSecretProperty('TWITTER_API_SECRET')}\""
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+    dataBinding {
+        enabled = true
+    }
     defaultConfig {
         applicationId "net.yuzumone.twimedica"
         minSdkVersion 21
