@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-        searchView.clearFocus();
         SearchTimeline timeline = new SearchTimeline.Builder()
                 .query(query)
                 .build();
@@ -49,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 .setTimeline(timeline)
                 .build();
         binding.list.setAdapter(adapter);
+        searchView.clearFocus();
         return false;
     }
 
