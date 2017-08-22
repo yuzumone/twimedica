@@ -2,10 +2,9 @@ package net.yuzumone.twimedica;
 
 import android.app.Application;
 
-import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
-
-import io.fabric.sdk.android.Fabric;
+import com.twitter.sdk.android.core.TwitterConfig;
 
 public class TwimedicaApp extends Application {
 
@@ -14,7 +13,9 @@ public class TwimedicaApp extends Application {
         super.onCreate();
         String key = BuildConfig.TWITTER_API_KEY;
         String secret = BuildConfig.TWITTER_API_SECRET;
-        TwitterAuthConfig config = new TwitterAuthConfig(key, secret);
-        Fabric.with(this, new Twitter(config));
+        TwitterConfig config = new TwitterConfig.Builder(this)
+                .twitterAuthConfig(new TwitterAuthConfig(key, secret))
+                .build();
+        Twitter.initialize(config);
     }
 }

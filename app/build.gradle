@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'io.fabric'
 
 def getSecretProperty(name) {
     Properties properties = new Properties()
@@ -7,7 +6,6 @@ def getSecretProperty(name) {
     return properties.getProperty(name.toString())
 }
 
-def FABRIC_API_KEY = getSecretProperty('FABRIC_API_KEY')
 def TWITTER_API_KEY = "\"${getSecretProperty('TWITTER_API_KEY')}\""
 def TWITTER_API_SECRET = "\"${getSecretProperty('TWITTER_API_SECRET')}\""
 
@@ -24,7 +22,6 @@ android {
         versionCode 1
         versionName "1.0"
 
-        manifestPlaceholders = [fabricApiKey: FABRIC_API_KEY]
         buildConfigField 'String', 'TWITTER_API_KEY', TWITTER_API_KEY
         buildConfigField 'String', 'TWITTER_API_SECRET', TWITTER_API_SECRET
 
@@ -45,7 +42,5 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.0'
     testCompile 'junit:junit:4.12'
-    compile('com.twitter.sdk.android:twitter:2.3.2@aar') {
-        transitive = true;
-    }
+    compile 'com.twitter.sdk.android:twitter:3.1.1'
 }
